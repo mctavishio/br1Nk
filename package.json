@@ -1,0 +1,15 @@
+{
+  "name": "br1nk",
+  "version": "0.0.1",
+  "description": "railway prophecies ::: br1Nk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/datapoets/br1Nk.git"
+  },
+  "author": "mctavish",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7"
+  }
+}

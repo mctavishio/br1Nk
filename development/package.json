@@ -1,0 +1,30 @@
+{
+	"name": "br1nk",
+	"engines": {
+	"node": "0.10.x"
+},
+	"version": "0.0.1",
+	"main": "rusty.js",
+	"dependencies": {
+	"express": "4.x",
+	"body-parser": "*",
+	"mongoose": "*",
+	"ejs": "*",
+	"googleapis": "*",
+	"twitter": "*",
+	"ws": "*",
+	"morse": "*",
+	"profanity-filter": "*"
+},
+	"description": "railway prophecies ::: br1Nk",
+	"devDependencies": {},
+	"scripts": {
+	"test": "echo \"Error: no test specified\" && exit 1"
+},
+	"repository": {
+	"type": "git",
+	"url": "?.git"
+},
+	"author": "mctavish",
+	"license": "ISC"
+}

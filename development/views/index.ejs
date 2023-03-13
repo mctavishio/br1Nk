@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title><%-p.metatitle%></title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="keywords" content="<%-p.metakeywords%>"/>
+	<meta name="description" content="<%-p.metadescription%>" />
+	<meta name="author" content="Kathy McTavish">
+	<script type="text/javascript">
+		blueprint = <%-JSON.stringify(p)%>;
+	</script>
+	<script src="/public/javascript/velocity.min.js"></script>
+	<script src="/public/javascript/velocity.ui.js"></script>
+	<script src="/public/javascript/kefir.js"></script>
+	<script src="/public/javascript/datapoets.js"></script>
+	<script src="/public/javascript/datapoets.js"></script>
+	<script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
+	<%if (p.javascript) { %>
+		<script src="/public/javascript/<%-p.javascript%>"></script>
+	<% } %>
+	<link rel="stylesheet" href="/public/css/datapoets.css"/>
+	<%if (p.css) { %>
+		<link rel="stylesheet" href="/public/css/<%-p.css%>"/>
+	<% } %>
+</head>
+<body id="body" class="darkness woodcut" style="background:#484848">
+	<div id="film">
+		<%if (p.role === "projection") { %>
+			<div class="frame zlowest">
+				<video controls="true" autoplay="true" width="100%" height="100%">
+					<source src = "/public/resources/br1nk20160215.mp4" type="video/mp4"/>
+				</video>
+			</div>
+
+			<!--1117459053 or 117426481 or 104983375 or abstract parts of 104444051 or 92376701 or 91046597 or 84429752 or * later part of 104894844 (after grainy part)-->
+			<!--
+			<div class="frame zlowest">
+				<iframe src="//player.vimeo.com/video/104894844?loop=1&autoplay=1" width="100%" height="720" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
+			-->
+		<% } %>
+		<nav id="navigation" >
+			<ul class="icomoon">
+				<li ><a touch-action="none" href="#" title="info" id="info"  class="internal"><span aria-hidden="true">&#xe64e;</span></a><span class="alt-text">info</span></a></li>
+			</ul>
+		</nav>
+		<div id="telegraph" class="zhighest" touch-action="none"><input id="telegraphelement0" class="telegraph zhigh" accesskey="w" value="" size="300"/></div>
+
+		<div id="widgets" touch-action="none" class="frame" >
+			<div id="grid" class="frame noselect zlowest optimize icomoon"><div id="gridelement0" class="grid dancer huge noselect"></div><div id="gridelement1" class="grid dancer huge noselect"></div><div id="gridelement2" class="grid dancer noselect"></div><div id="gridelement3" class="grid dancer noselect"></div><div id="gridelement4" class="grid dancer noselect"></div><div id="gridelement5" class="grid dancer noselect"></div><div id="gridelement6" class="grid dancer noselect"></div><div id="gridelement7" class="grid dancer noselect"></div><div id="gridelement8" class="grid dancer noselect"></div></div>
+			<div id="count" class="frame noselect centercontext"><div id="countelement0" class="zeroslash zlowest count centercanvas"></div><div id="countelement1" class="zeroslash zlowest count centercanvas"></div></div>
+			<div id="clock" class="footer zeroslash zhighest noselect"><span id="clockelement0" class="zeroslash zhighest clock"></span></div>
+			<div id="cloud" class="frame"><canvas id="cloudelement0" class = "cloud frame"></canvas></div>
+			<div id="rightterminal" class="frame textalignright noselect monospace">
+				<% for(var j = 0; j < 8; ++j) {%>
+					<div id="rightterminalelement<%-j%>" class="rightterminal textalignright rightterminalentry noselect"></div>
+				<% } %>
+				<%if (p.role !== "mobile") { %>
+					<% for(var j=8; j<10; ++j) {%>
+						<div id="rightterminalelement<%-j%>" class="rightterminal textalignright rightterminalentry noselect"></div>
+					<% } %>
+				<% } %>
+			</div>
+			<div id="skyterminal" class="frame noselect zlow optimize monospace"></div>
+			<div id="leftterminal" class="frame noselect zlowest optimize paintsplatter">
+				<% for(var j = 0; j < 4; ++j) {%>
+					<div id="leftterminalelementelement<%-j%>" class="leftterminal terminalentry noselect">. . .</div>
+				<% } %>
+				<%if (p.role !== "mobile") { %>
+					<% for(var j=4; j<8; ++j) {%>
+						<div id="leftterminalelementelement<%-j%>" class="leftterminal terminalentry noselect">. . .</div>
+					<% } %>
+				<% } %>
+			</div>
+			<div id="broadcasts" class="frame noselect zlow woodcut"><div id="broadcastselement0" class="broadcasts dancer"></div><div id="broadcastselement1" class="broadcasts dancer"></div><div id="broadcastselement2" class="broadcasts dancer"></div><div id="broadcastselement3" class="broadcasts dancer"></div></div>
+			<div id="colorscreens" class="frame"><div id="colorscreenselement0" class="colorscreens absolute optimize z0"></div></div>
+			<svg id="svgframe" class="frame">
+				<g id="vlines">
+					<% for(var j = 0; j < 2; ++j) {%>
+						<line id="vlineselement<%-j%>" class="vlines" x1="0" x2="0" y1="0" y2="0" stroke= "#ffcc00" stroke-width="4" />
+					<% } %>
+					<%if (p.role !== "mobile") { %>
+						<% for(var j = 2; j < 5; ++j) {%>
+							<line id="vlineselement<%-j%>" class="vlines" x1="0" x2="0" y1="0" y2="0" stroke= "#ffcc00" stroke-width="4" />
+						<% } %>
+					<% } %>
+				</g>
+				<g id="hlines">
+					<% for(var j = 0; j < 2; ++j) {%>
+						<line id="hlineselement<%-j%>" class="hlines" x1="0" x2="0" y1="0" y2="0" stroke= "#ffcc00" stroke-width="4" />
+					<% } %>
+					<%if (p.role !== "mobile") { %>
+						<% for(var j = 2; j < 5; ++j) {%>
+							<line id="vlineselement<%-j%>" class="vlines" x1="0" x2="0" y1="0" y2="0" stroke= "#ffcc00" stroke-width="4" />
+						<% } %>
+					<% } %>
+				</g>
+				<g id="circles">
+					<% for(var j = 0; j < 2; ++j) {%>
+						<circle id="circleselement<%-j%>" class="circles" r = "200" fill = "#ffcc00" cx = "0" cy = "0" />
+					<% } %>
+					<%if (p.role !== "mobile") { %>
+						<% for(var j = 2; j < 5; ++j) {%>
+							<circle id="circleselement<%-j%>" class="circles" r = "200" fill = "#ffcc00" cx = "0" cy = "0" />
+						<% } %>
+					<% } %>
+				</g>
+				<g id="sketches">
+					<% for(var j = 0; j < 1; ++j) {%>
+						<path id="sketcheselement<%-j%>" class="sketches" d= "" fill= "none" stroke= "#000000"  stroke-width="23" stroke-linecap= "round" />
+					<% } %>
+					<%if (p.role !== "mobile") { %>
+						<% for(var j = 1; j < 3; ++j) {%>
+							<path id="sketcheselement<%-j%>" class="sketches" d= "" fill= "none" stroke= "#000000"  stroke-width="23" stroke-linecap= "round" />
+						<% } %>
+					<% } %>
+				</g>
+				<g id="path"><path id="pathelement0" class="path" d= "" fill= "none" stroke= "#111111"  stroke-width="8" stroke-linecap= "round" /></g>
+				<g id="pathpoints">
+					<% for(var j = 0; j < 4; ++j) {%>
+						<circle id="pathpointselement<%-j%>" class="pathpoints" r = "11" fill = "#ffcc00" cx = "0" cy = "0" />
+					<% } %>
+					<%if (p.role !== "mobile") { %>
+						<% for(var j = 4; j < 8; ++j) {%>
+							<circle id="pathpointselement<%-j%>" class="pathpoints" r = "11" fill = "#ffcc00" cx = "0" cy = "0" />
+						<% } %>
+					<% } %>
+				</g>
+			</svg>
+			<div id="zebras" class="frame noselect"><div id="zebraselement0" class="zebras absolute optimize z0"></div><div id="zebraselement1" class="zebras absolute optimize z0"></div><div id="zebraselement2" class="zebras absolute optimize z0"></div></div>
+			<div id="crosshairs" class="frame noselect huge"><div id="crosshairselement0" class="crosshairs absolute zhigh"></div></div>
+		</div>
+		<div id="resources">
+			<div id="millionsofyears" class="coreresource science">.. / .-- .- ... / ... -.- -.-- / ... .- -.-- / -- -.-- / -. .- -- . / .-.. .- ... - / -... .. .-. -.. |||In May 2013, it was big news when, for the first time, the concentration of carbon dioxide in the atmosphere hit 400 parts per million|||This is higher than it's been in millions of years|||The level of CO2 in the atmosphere is now increasing at a rate that is at least 100 times faster|||than it has been at any time since record-keeping began|||At some point next year or the year after|||carbon dioxide levels will rise above 400 ppm|||and will not be likely to fall below that mark again|||350 parts per million|||is the maximum allowable for maintaining ecosystems|||and the human systems that depend on them|||.. / .-- .- ... / ... -.- -.-- / ... .- -.-- / -- -.-- / -. .- -- . / .-.. .- ... - / -... .. .-. -..</div>
+			<div id="oceansonbrinkofcatastrophe" class="coreresource science">.. / .-- .- ... / ... -.- -.-- / ... .- -.-- / -- -.-- / -. .- -- . / .-.. .- ... - / -... .. .-. -.. |||Oceans on brink of catastrophe|||The world's oceans are faced with an unprecedented loss of species|||comparable to the great mass extinctions of prehistory|||The seas are degenerating far faster than anyone has predicted,|||the report says, because of the cumulative impact of a number of severe individual stresses,|||ranging from climate warming and sea-water acidification,|||to widespread chemical pollution and gross overfishing|||The coming together of these factors|||is now threatening the marine environment with a catastrophe 'unprecedented in human history',|||according to the report, from a panel of leading marine scientists|||brought together in Oxford earlier this year|||by the International Programme on the State of the Ocean (IPSO)|||and the International Union for the Conservation of Nature (IUCN)|||The stark suggestion made by the panel is that the potential extinction of species,|||from large fish at one end of the scale to tiny corals at the other,|||is directly comparable to the five great mass extinctions in the geological record,|||during each of which much of the world's life died out|||They range from the Ordovician-Silurian 'event' of 450 million years ago,|||to the Cretaceous-Tertiary extinction of 65 million years ago,|||which is believed to have wiped out the dinosaurs|||The worst of them, the event at the end of the Permian period, 251 million years ago,|||is thought to have eliminated 70 per cent of species on land|||and 96 per cent of all species in the sea|||The panel of 27 scientists, who considered the latest research from all areas of marine science,|||concluded that a &quot;combination of stressors is creating the conditions|||associated with every previous major extinction of species in Earth's history&quot;|||They also concluded:  * The speed and rate of degeneration of the oceans is far faster than anyone has predicted||| * Many of the negative impacts identified are greater than the worst predictions||| * The first steps to globally significant extinction may have already begun|||Reviewing recent research, the panel of experts &quot;found firm evidence&quot; that the effects of climate change, coupled with other human-induced impacts such as overfishing and nutrient run-off from farming, have already caused a dramatic decline in ocean health||| Not only are there severe declines in many fish species,|||to the point of commercial extinction in some cases,|||and an 'unparalleled' rate of regional extinction of some habitat types,|||such as mangrove and seagrass meadows,|||but some whole marine ecosystems, such as coral reefs,|||may be gone within a generation||| The report says: Increasing hypoxia [low oxygen levels]|||and anoxia [absence of oxygen, known as ocean dead zones],|||combined with warming of the ocean and acidification,|||are the three factors which have been present in every mass extinction event in Earth's history||| 'There is strong scientific evidence that these three factors|||are combining in the ocean again, exacerbated by multiple severe stressors|||The scientific panel concluded that a new extinction event was inevitable|||if the current trajectory of damage continues.'||| .. / .-- .- ... / ... -.- -.-- / ... .- -.-- / -- -.-- / -. .- -- . / .-.. .- ... - / -... .. .-. -..</div>
+			<div id="pbsmassextinction" class="coreresource science">The Current Mass Extinction ::: |||Is the biosphere today on the verge|||of anything like the mass extinctions of the geological past?|||Could some equivalent of meteorite impacts be underway|||as humankind's rapid destruction of natural habitats|||forces animals and plants out of existence?|||Increasingly, researchers are doing the numbers, and saying, yes|||if present trends continue, a mass extinction is very likely underway|||The evidence is pieced together from details drawn from all over the world,|||but it adds up to a disturbing picture|||This time, unlike the past,|||it's not a chance asteroid collision,|||nor a chain of climatic circumstances alone that's at fault|||Instead,|||it is chiefly the activities of an ever-growing human population|||the past 400 years have seen 89 mammalian extinctions, almost 45 times the predicted rate, and another 169 mammal species are listed as critically endangered|||Therein lies the concern biologists have for many of today's species|||While the number of actual documented extinctions may not seem that high,|||they know that many more species are 'living dead'|||populations so critically small that they have little hope of survival|||Other species are among the living dead because of their interrelationships|||for example, the loss of a pollinator can doom the plant it pollinates,|||and a prey species can take its predator with it into extinction|||By some estimates, as much as 30 percent of the world's animals and plants could be on a path to extinction within 100 years|||These losses are likely to be unevenly distributed,|||as some geographic areas and some groups of organisms are more vulnerable to extinction than others|||Tropical rainforest species are at especially high risk,|||as are top carnivores, species with small geographic ranges, and marine reef species|||Humanity's main impact on the extinction rate is landscape modification,|||an impact greatly increased by the burgeoning human population|||Now standing at 5.7 billion and growing at a rate of 1.6 percent per year,|||the population of the world will double in 43 years if growth continues at this pace|||By draining wetlands, plowing prairies, logging forests, paving, and building,|||we are altering the landscape on an unprecedented scale|||Some organisms do well under the conditions we've created:|||They tend to cope well with change, tolerate a broad range of habitats, disperse widely, and reproduce rapidly, and they can quickly crowd out more specialized local species|||City pigeons, zebra mussels, rats, and kudzu and tamarisk trees|||these are examples of what biologists call 'weedy' species, both animals and plants|||Many weedy species will probably survive,|||and even thrive, in the face of the current mass extinction|||But thousands of others, many never known to science, are likely to perish|||And what is the fate of our own species likely to be?|||if we really are in the midst of a sixth mass extinction?|||One possibility is that as diversity and abundance wither, the species causing it all:|||Homo sapiens, the most dominant species in history|||could also be on the road to oblivion|||But another possibility is that Homo sapiens,|||which has proved to be a very effective weedy species itself,|||will persist|||That's the view of paleobiologist David Jablonski,|||who sees us as one of the survivors, 'sort of picking through the rubble'|||of a world that has lost much of its biodiversity and much of its comfort|||For along with that species richness,|||the ecosystem is likely to loose much of its ability to provide|||many of the valuable services that we take for granted,|||from cleaning and recirculating air and water,|||to pollinating crops and providing a source for new pharmaceuticals|||And while the fossil record tells us that biodiversity has always recovered,|||it also tells us that the recovery will be unbearably slow in human terms|||5 to 10 million years after the mass extinctions of the past|||That's more than 200,000 generations of humankind|||before levels of biodiversity comparable to those we inherited might be restored.</div>
+			<div id="goneagainabstract" class="coreresource science">as many as 30-50% of all species are possibly heading toward extinction by mid-century</div>
+			<div id="laststop" class="coreresource zero">1914|||departures|||last stop|||cincinnati zoo|||martha died|||one september day|||last passenger|||last bird|||and yesterday|||clouds of birds|||tunnels of birds|||forests ablaze with birds|||then one|||then none|||swept by|||silver scythe|||empty swing|||wild|||twisted flight|||last passenger|||pigeon she|||slipped away|||forever into sky|||through iron bars|||blue ghost wings|||wing bone|||tiny xylophone|||weightless kite</div>
+			<div id="itwaslikethis" class="coreresource machine">it was like this every morning</div>
+			<div id="itwaslikethismorsecode" class="coreresource machine">.. - / .-- .- ... / .-.. .. -.- . / - .... .. ... / . ...- . .-. -.-- / -- --- .-. -. .. -. --.</div>
+			<div id="itwaslikethisbase64" class="coreresource machine">aXQgd2FzIGxpa2UgdGhpcyBldmVyeSBtb3JuaW5n</div>
+			<div id="hellobinary" class="coreresource machine">01101000 01100101 01101100 01101100 01101111</div>
+			<div id="helloworldmorsecode" class="coreresource machine">.... . .-.. .-.. --- / .-- --- .-. .-.. -..</div>
+			<div id="helloworldglitch" class="coreresource machine">hellº wørld hellº w•rL∂ ¡</div>
+			<div id="izer0" class="coreresource machine">i0i000i0000iiii0i000i0000iii ºø1</div>
+			<div id="thecountaftertime" class="coreresource machine">#thecount ‰ 0 1 2 3 4 5 6 7 8 9 iº #aftercount #aftertime</div>
+			<div id="holyglitch" class="coreresource machine">høly h0L¥ hølY H0ly ® Å</div>
+			<div id="holymorsecode" class="coreresource machine">.... --- .-.. -.--  h0L¥ .... --- .-.. -.--</div>
+			<div id="xxoo" class="coreresource machine">Ö x x x ø 0 Ø x X x ø 0 Ø xº3</div>
+			<div id="helloindustryglitch" class="coreresource machine">hellº wørld ¡ he¬Lø 1ndUstr¥ ¡</div>
+			<div id="foreachontouch" class="coreresource machine">forEach Å ønTøuch </div>
+			<div id="helloworld0" class="coreresource helloworld">! ••• ϕn Ϯ Ø u Ͽ H  ••• ¡ </div>
+			<div id="helloworld0" class="coreresource helloworld">Ö x x ø ϕ ‰ Ø x X x• </div>
+			<div id="helloworld1" class="coreresource helloworld">¡ hellº wørlƉ ! </div>
+			<div id="helloworld2" class="coreresource helloworld">! hellº 1ndUstr¥ ¡ </div>
+			<div id="helloworld3" class="coreresource helloworld">! hęLĻø dȫRѲϮhϔ¡ </div>
+			<div id="helloworld4" class="coreresource helloworld">!hęlĻʘ¡∞! </div>
+			<div id="helloworld5" class="coreresource helloworld">!hЄLȽϿ ¡ sC13Nçe! </div>
+			<div id="helloworld6" class="coreresource helloworld">|||•••br1Nk:::z3r0•••||| </div>
+			<div id="helloworld7" class="coreresource helloworld">Öx xø‰Ø ϿxXx®. </div>
+			<div id="helloworld9" class="coreresource helloworld">Ö xx øʘ 0Ø xXxº </div>
+			<div id="cassiel" class="coreresource zero">i was looking for you|||in the beginning|||black clouds|||χάος|||tsunami|||radioactive waves|||dry rivers|||chaos|||say my name|||firmaments|||recent loss of species|||will soon propel the world|||into its sixth mass extinction|||this is your captain|||this is just a test|||i was sky|||on the red list|||cyclones|||scrawled formulas|||say my name|||fevered calculations|||stochastic clouds|||this is just a test|||raging fires|||turbulence|||theramin sirens|||emergency broadcasts|||i was looking for you|||electrostatic stars|||this is just a test|||blue window|||i was a bird|||gone again|||wax wings|||lightning|||a burning sun|||i was a bird|||god of ahab|||#c@ssieL - χάος|||#c@ssieL|||say my name</div>
+		</div>
+	</div>
+	<div id="about" class="terminal sans zhighest" style="display:none;">
+		<nav id="navigation" >
+			<ul class="icomoon">
+				<li ><a touch-action="none" href="#" url="playfilm" title="playfilm" id="playfilm" class="internal"><span aria-hidden="true">&#xe657;</span></a><span class="alt-text">play</span></a></li>
+				<!--<li ><a touch-action="none" href="http://mctavish.io" title="home" id="home"><span aria-hidden="true">&#xe600;</span></a><span class="alt-text">info</span></a></li>-->
+				<li ><a touch-action="none" href="https://twitter.com/kathymctavish" title="twitter" id="twittermctavish"  class="external"><span aria-hidden="true">&#xe689;</span></a><span class="alt-text">twitter</span></li>
+				<li ><a touch-action="none" href="http://facebook.com/datapoets" title="facebook" id="facebookdatapoets" class="external"><span aria-hidden="true">&#xe688;</span></a><span class="alt-text">facebook</span></li>
+				<li ><a touch-action="none" href="https://vimeo.com/wildwoodriver" title="vimeo" id="vimeowildwoodriver" class="external"><span aria-hidden="true">&#xe68a;</span></a><span class="alt-text">vimeo</span></li>
+			</ul>
+		</nav>
+		
+		<header id="header">
+			<hr/>
+			<hgroup>
+				<h1 id="title">mctavish</h1>
+			</hgroup>
+			<hr/>
+		</header>
+		<div id="ingredients" >
+			<h5>b r 1 N k ingredients</h5>
+			<ul class="circle zhighest">
+				<li ><a touch-action="none" href="https://rpominov.github.io/kefir/" title="kefir"  class="external">kefir.js ::: frp library </a></li>
+				<li ><a touch-action="none" href="http://julian.com/research/velocity/" title="velocity"  class="external">velocity.js ::: animation library </a></li>
+				<li ><a touch-action="none" href="https://nodejs.org/en/" title="node"  class="external">node.js </a></li>
+				<li ><a touch-action="none" href="https://www.w3.org/" title="w3c"  class="external">web tech ::: html5 / css3 / websockets / web audio / javascript </a></li>
+			</ul>
+		</div>
+		<div id="references" >
+			<h5>references</h5>
+			<ul class="circle zhighest">
+				<li ><a touch-action="none" href="https://www.haskell.org/documentation" title="haskell docs"  class="external">haskell ::: functional programming language & useful frame for understanding the ideas behind frp </a></li>
+				<li ><a touch-action="none" href="https://www.haskell.org/" title="haskell book"  class="external">haskell book ::: "Learn You a Haskell for Great Good!" </a></li>
+				<li ><a touch-action="none" href="https://blog.jcoglan.com/2011/03/05/translation-from-haskell-to-javascript-of-selected-portions-of-the-best-introduction-to-monads-ive-ever-read/" title="monads_javascript"  class="external">monads ::: javascript description </a></li>
+				<li ><a touch-action="none" href="http://eamodeorubio.github.io/tamingasync/#/" title="asynchapproaches"  class="external">asynch motivation </a></li>
+				<li ><a touch-action="none" href="https://www.youtube.com/watch?v=Agu6jipKfYw&feature=youtu.be" title="elmfrp"  class="external">presentation on frp from elm creator (Evan Czaplicki)</a></li>
+				<li ><a touch-action="none" href="https://www.youtube.com/watch?v=ya4UHuXNygM" title="crockfordfp" class="external">Crockford on JavaScript - Act III: Function the Ultimate (a reminder of the beauty of functions in javascript)</a></li>
+				<li ><a touch-action="none" href="https://github.com/douglascrockford/monad/blob/master/monad.js" title="crockfordmonad"  class="external">thoughts on articulating monads in javascript (Douglas Crockford)</a></li>
+				<li ><a touch-action="none" href="http://www.scoop.it/t/semantic-web-tools" title="scoopit"  class="external">my collection of creative tech references (including many references to frp)</a></li>
+
+
+			</ul>
+		</div>
+		<div id="links" >
+			<h5>about me</h5>
+			<ul class="circle zhighest">
+				<li ><a touch-action="none" href="https://twitter.com/datapoets" title="twitter"  class="external">twitter ::: datapoets </a></li>
+				<li ><a touch-action="none" href="https://twitter.com/kathymctavish" title="twitter"  class="external">twitter ::: kathymctavish </a></li>
+				<li ><a touch-action="none" href="https://twitter.com/blueboatfilms" title="twitter"  class="external">twitter ::: blueboatfilms </a></li>
+				<li ><a touch-action="none" href="http://www.scoop.it/u/kathy-mctavish" title="shoebox"  class="external">scoopIt ::: shoebox of clippings </a></li>
+				<li ><a touch-action="none" href="http://facebook.com/datapoets" title="facebook"  class="external">facebook </a></li>
+				<li ><a touch-action="none" href="https://vimeo.com/wildwoodriver" title="vimeo"  class="external">vimeo </a></li>
+				<li ><a touch-action="none" href="http://mctavish.io" title="vimeo"  class="external">website ::: mctavish.io </a></li>
+			</ul>
+		</div>
+		<div id="portfolio" >
+			<h5>portfolio</h5>
+			<ul class="circle zhighest">
+				<li ><a touch-action="none" href="http://platform48.mod.bz" title="brink"  class="external">b r 1 N k </a></li>
+				<li ><a touch-action="none" href="http://z3r0.io" title="z3r0.io"  class="external">z3r0.io </a></li>
+				<li ><a touch-action="none" href="http://cellodreams.com/holeinthesky" title="hole in the sky"  class="external">høle in the skY </a></li>
+				<li ><a touch-action="none" href="http://cellodreams.com/originofbirds" title="origin of birds"  class="external">the origin of birds </a></li>
+				<li ><a touch-action="none" href="http://cellodreams.com/roadtowilliston" title="traffick"  class="external">road to williston / traffick </a></li>
+				<li ><a touch-action="none" href="http://cellodreams.com/sophroniatwo" title="sophronia two"  class="external">sophronia two </a></li>
+				<li ><a touch-action="none" href="http://cellodreams.com/mappingwater" title="mapping water"  class="external">mapping water in 5 parts (for kathleen roberts)</a></li>
+				<li ><a touch-action="none" href="http://cellodreams.com/radiopluto" title="radio pluto"  class="external">radiø plutø </a></li>
+				<li ><a touch-action="none" href="http://cellodreams.com/holyfoolsacredheart.html" title="holy fool"  class="external">holy fool </a></li>
+				<li ><a touch-action="none" href="http://cellodreams.com/nighttrainbluewindow.html" title="night train blue window"  class="external">night train / blue window </a></li>
+				<li ><a touch-action="none" href="http://cellodreams.com/birdland.html" title="birdland"  class="external">birdland</a></li>
+			</ul>
+		</div>
+		<div id="bio" class="sans">
+			<h5>bio</h5>
+			<p>I am a cellist, composer, and digital media artist. In live performance, installation and online environments, I blend improvisational cello, found sound, text, data and abstract, layered, moving images. My recent work has focused on creating generative methods for building multichannel video and sound environments.</p>
+		</div>
+	</div>
+	
+
+	
+</body>
+
+</html>
